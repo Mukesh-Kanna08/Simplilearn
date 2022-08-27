@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row mt-5">
+    <div *ngFor="let tempQuiz of quizes" class="col mt-5">
+      <div class="card">
+        <div class="card-body text-left">
+          <h5 class="card-title text-center">
+            {{ tempQuiz.name }}
+          </h5>
+          <hr>
+          <a
+            routerLink="/quiz/{{ tempQuiz.name }}"
+            class="btn btn-success mt-5"
+            > {{ tempQuiz.name }} - Start Quiz</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
