@@ -1,0 +1,33 @@
+<div class="menu-sidebar-content js-scrollbar1">
+    <nav class="navbar-sidebar">
+        <ul class="list-unstyled navbar-list">
+            <li>
+                <button *ngIf="username == 'admin'"  routerLink="/add-product"    class="btn btn-dark btn-sm">Add Product</button><br><br><hr><br>
+            </li>
+            <li style="margin-left:-17px;font-size:27px; font-family: Helvetica, sans-serif, black;"> Cuisines:</li>
+            
+            <li style="line-height: 2.3;">
+                
+                <i style="font-size:14px"></i>
+                <a style="text-decoration:none" routerLink="/category" [ngClass]="{'active-link':clicked}"  (click)="Clicked()">
+                 All
+                </a>
+
+            </li>
+
+            
+
+            <li style="line-height: 2.3;" *ngFor="let tempProductCategory of productCategories">
+                <i style="font-size:14px"></i>
+                <a style="text-decoration:none" routerLink="/category/{{ tempProductCategory.id }}" routerLinkActive="active-link" (click)="UnClicked()">
+                    {{ tempProductCategory.cuisine_name }}
+                </a>
+
+                <br>
+
+            </li>
+            <br>
+        
+        </ul>
+    </nav>
+</div>
